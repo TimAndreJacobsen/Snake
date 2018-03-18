@@ -25,7 +25,7 @@ public class DrawingBoard extends JPanel implements Updatable {
             graphics.fill3DRect(p.getX() * pieceLength,p.getY() * pieceLength,pieceLength,pieceLength,true);
         }
         graphics.setColor(Color.RED);
-        graphics.fillOval(wormGame.getApple().getX(), wormGame.getApple().getY(), pieceLength, pieceLength);
+        graphics.fillOval(wormGame.getApple().getX() * pieceLength, wormGame.getApple().getY() * pieceLength, pieceLength, pieceLength);
     }
 
     @Override
