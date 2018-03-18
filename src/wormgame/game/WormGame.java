@@ -21,7 +21,6 @@ public class WormGame extends Timer implements ActionListener {
 
     public WormGame(int width, int height) {
         super(1000, null);
-
         this.width = width;
         this.height = height;
         this.continues = true;

@@ -2,7 +2,6 @@ package wormgame.gui;
 
 import wormgame.Direction;
 import wormgame.domain.Worm;
-
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
@@ -15,13 +14,8 @@ public class KeyboardListener implements KeyListener {
     }
 
     @Override
-    public void keyTyped(KeyEvent e) {
-
-    }
-
-    @Override
     public void keyPressed(KeyEvent e) {
-
+    //TODO: refactor and split this code up
         if (e.getKeyCode() == KeyEvent.VK_UP) {
             if (worm.getDirection() == Direction.DOWN) {
                 return;
@@ -49,7 +43,10 @@ public class KeyboardListener implements KeyListener {
     }
 
     @Override
-    public void keyReleased(KeyEvent e) {
+    public void keyTyped(KeyEvent e) {
+    }
 
+    @Override
+    public void keyReleased(KeyEvent e) {
     }
 }
