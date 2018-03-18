@@ -11,7 +11,7 @@ import java.awt.event.ActionListener;
 import java.util.Random;
 
 public class WormGame extends Timer implements ActionListener {
-    // Declaring
+
     private int width;
     private int height;
     private boolean continues;
@@ -19,7 +19,6 @@ public class WormGame extends Timer implements ActionListener {
     private Worm worm;
     private Apple apple;
 
-    // Constructor
     public WormGame(int width, int height) {
         super(1000, null);
 
@@ -27,41 +26,35 @@ public class WormGame extends Timer implements ActionListener {
         this.height = height;
         this.continues = true;
         this.worm = new Worm(width / 2, height / 2, Direction.DOWN);
-
         do {
             Random rand = new Random();
             this.apple = new Apple(rand.nextInt(width), rand.nextInt(height));
         } while (worm.runsInto(apple));
-
         addActionListener(this);
         setInitialDelay(2000);
     }
 
-    // Getters and Setters
-    public void setUpdatable(Updatable updatable) {
-        this.updatable = updatable;
-    }
-
+    // Getters
     public int getHeight() {
         return height;
     }
-
     public int getWidth() {
         return width;
     }
-
     public Worm getWorm() {
         return this.worm;
     }
-
-    public void setWorm(Worm worm) {
-        this.worm = worm;
-    }
-
     public Apple getApple() {
         return this.apple;
     }
 
+    // Setters
+    public void setWorm(Worm worm) {
+        this.worm = worm;
+    }
+    public void setUpdatable(Updatable updatable) {
+        this.updatable = updatable;
+    }
     public void setApple(Apple apple) {
         this.apple = apple;
     }
@@ -80,8 +73,8 @@ public class WormGame extends Timer implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent ae) {
-
         if (!continues) {
+            System.out.println("game ending");
             return;
         }
         worm.move();
@@ -90,20 +83,18 @@ public class WormGame extends Timer implements ActionListener {
             worm.grow();
             spawnApple();
 
-            // fail conditions
+        // fail conditions
         } else if (worm.runsIntoItself()) {
-            continues = false;
-            // TODO index out of bounds error: [2]
-        } else if (worm.getHeadX() == this.width || worm.getHeadY() == this.height) { // changed 8.2.18
+            System.out.println("Ran into itself");
             continues = false;
 
-        } else if (worm.getHeadX() == 0 || worm.getHeadY() == 0) { // adding for min values aswell
-            // } else if (worm.getPieces().get(worm.getLength()).getX() == this.width || worm.getPieces().get(worm.getLength()).getX() < 0) {
+        } else if (worm.getHeadX() == this.width || worm.getHeadY() == this.height) {
+            System.out.println("Out of bounds");
             continues = false;
 
-        //} else if (worm.getPieces().get(worm.getLength()).getY() == this.height || worm.getPieces().get(worm.getLength()).getY() < 0) {
-           // continues = false;
-
+        } else if (worm.getHeadX() == 0 || worm.getHeadY() == 0) {
+            System.out.println("out of bounds again? ");
+            continues = false;
         }
         updatable.update();
         setDelay(1000 / worm.getLength());

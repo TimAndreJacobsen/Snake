@@ -9,7 +9,6 @@ public class Main {
 
     public static void main(String[] args) {
         WormGame game = new WormGame(20, 20);
-
         UserInterface ui = new UserInterface(game, 20);
         SwingUtilities.invokeLater(ui);
 
@@ -17,10 +16,9 @@ public class Main {
             try {
                 Thread.sleep(100);
             } catch (InterruptedException ex) {
-                System.out.println("The drawing board hasn't been created yet.");
+                System.out.println("relaunching");
             }
         }
-
         game.setUpdatable(ui.getUpdatable());
         game.start();
     }

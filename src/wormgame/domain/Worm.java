@@ -6,15 +6,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Worm {
-    // Declaring class variables
+
     private int x;
     private int y;
     private boolean grow;
-
     private Direction direction;
     private List<Piece> body;
 
-    // Constructor
     public Worm(int originalX, int originalY, Direction originalDirection) {
         this.x = originalX;
         this.y = originalY;
@@ -22,7 +20,6 @@ public class Worm {
         this.body = new ArrayList<Piece>();
         this.body.add(new Piece(x,y));
         this.grow = false;
-        // could add head if it useful for tracking
     }
 
     // Getters
@@ -36,10 +33,10 @@ public class Worm {
         return this.body;
     }
 
+    // Setters
     public void setDirection(Direction direction) {
         this.direction = direction;
     }
-
     public void grow() {
         grow = true;
     }
@@ -66,6 +63,7 @@ public class Worm {
         if (this.getLength() > 3 && grow == false) {
             body.remove(0);
         }
+
         if (grow) {
             grow = false;
         }
@@ -91,7 +89,6 @@ public class Worm {
         }
         return false;
     }
-
 
     public int getHeadX() {
         Piece headPiece = body.get(0);
