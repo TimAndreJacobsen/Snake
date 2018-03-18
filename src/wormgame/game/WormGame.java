@@ -91,10 +91,6 @@ public class WormGame extends Timer implements ActionListener {
         } else if (worm.getHeadX() == this.width || worm.getHeadY() == this.height) {
             System.out.println("Out of bounds");
             continues = false;
-
-        } else if (worm.getHeadX() == 0 || worm.getHeadY() == 0) {
-            System.out.println("out of bounds again? ");
-            continues = false;
         }
         updatable.update();
         setDelay(1000 / worm.getLength());
