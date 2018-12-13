@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="afba1ec6-5d88-43d3-bbdb-9a5554dae38a" name="Default" comment="First working version">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Snake/wormgame/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/wormgame/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Snake/wormgame/domain/Worm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/wormgame/domain/Worm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Snake/wormgame/game/WormGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/wormgame/game/WormGame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Snake/wormgame/gui/DrawingBoard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/wormgame/gui/DrawingBoard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Snake/wormgame/gui/UserInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/wormgame/gui/UserInterface.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/wormgame/domain/Worm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wormgame/domain/Worm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/wormgame/game/WormGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wormgame/game/WormGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/wormgame/gui/DrawingBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wormgame/gui/DrawingBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/wormgame/gui/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wormgame/gui/UserInterface.java" afterDir="false" />
-    </list>
+    <list default="true" id="afba1ec6-5d88-43d3-bbdb-9a5554dae38a" name="Default" comment="First working version" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -432,7 +419,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -442,7 +428,7 @@
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.32980973" />
       <window_info anchor="right" id="Maven Projects" order="3" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.18703507" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.18703507" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32934782" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
