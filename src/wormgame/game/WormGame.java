@@ -77,6 +77,8 @@ public class WormGame extends Timer implements ActionListener {
     public void actionPerformed(ActionEvent ae) {
         if (!continues) {
             System.out.println("game ending");
+            // Add end game condition? infinite loop
+            System.exit(0);
             return;
         }
         worm.move();
@@ -85,7 +87,8 @@ public class WormGame extends Timer implements ActionListener {
             worm.grow();
             spawnApple();
         }
-        // Fail conditions
+
+        // Game Loss conditions
         if (worm.runsIntoItself()) {
             System.out.println("Ran into itself");
             continues = false;
@@ -98,6 +101,8 @@ public class WormGame extends Timer implements ActionListener {
             System.out.println("Out of bounds");
             continues = false;
         }
+
+
         updatable.update();
         setDelay(1000 / worm.getLength());
     }
