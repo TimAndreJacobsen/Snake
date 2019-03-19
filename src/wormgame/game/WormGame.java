@@ -20,7 +20,7 @@ public class WormGame extends Timer implements ActionListener {
     private Apple apple;
 
     public WormGame(int width, int height) {
-        super(1000, null);
+        super(500, null);
         this.width = width;
         this.height = height;
         this.continues = true;
@@ -30,7 +30,7 @@ public class WormGame extends Timer implements ActionListener {
             this.apple = new Apple(rand.nextInt(width), rand.nextInt(height));
         } while (worm.runsInto(apple));
         addActionListener(this);
-        setInitialDelay(2000);
+        setInitialDelay(500);
     }
 
     // Getters
@@ -63,6 +63,9 @@ public class WormGame extends Timer implements ActionListener {
         return continues;
     }
 
+    // REQUIRES: new game, worm eats apple.
+    // MODIFIES: WormGame, Apple
+    // EFFECTS : Spawns a new apple, checks that it doesn't spawn on the worm
     private void spawnApple() {
         do {
             Random rand = new Random();
@@ -74,6 +77,8 @@ public class WormGame extends Timer implements ActionListener {
     public void actionPerformed(ActionEvent ae) {
         if (!continues) {
             System.out.println("game ending");
+            // Add end game condition? infinite loop
+            System.exit(0);
             return;
         }
         worm.move();
@@ -81,16 +86,23 @@ public class WormGame extends Timer implements ActionListener {
         if (worm.runsInto(apple)) {
             worm.grow();
             spawnApple();
+        }
 
-        // fail conditions
-        } else if (worm.runsIntoItself()) {
+        // Game Loss conditions
+        if (worm.runsIntoItself()) {
             System.out.println("Ran into itself");
             continues = false;
-
-        } else if (worm.getHeadX() == this.width || worm.getHeadY() == this.height) {
+        }
+        if (worm.getHeadX() == this.width+1 || worm.getHeadY() == this.height+1) {
             System.out.println("Out of bounds");
             continues = false;
         }
+        if (worm.getHeadX() == -1 || worm.getHeadY() == -1) {
+            System.out.println("Out of bounds");
+            continues = false;
+        }
+
+
         updatable.update();
         setDelay(1000 / worm.getLength());
     }

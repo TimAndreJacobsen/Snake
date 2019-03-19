@@ -43,27 +43,25 @@ public class Worm {
 
     // Class Methods
     public void move() {
-
         if (this.direction == Direction.UP) {
             body.add(new Piece(this.x, this.y-1));
-            this.y = this.y -1;
+            this.y--;
 
         } else if (this.direction == Direction.DOWN) {
             body.add(new Piece(this.x, this.y+1));
-            this.y = this.y +1;
+            this.y++;
 
         } else if (this.direction == Direction.LEFT) {
             body.add(new Piece(this.x-1, this.y));
-            this.x = this.x -1;
+            this.x--;
 
         } else if (this.direction == Direction.RIGHT) {
             body.add(new Piece(this.x+1, this.y));
-            this.x = this.x +1;
+            this.x++;
         }
         if (this.getLength() > 3 && grow == false) {
             body.remove(0);
         }
-
         if (grow) {
             grow = false;
         }
